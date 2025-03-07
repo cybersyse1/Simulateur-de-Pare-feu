@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; 
+}
+header {
+    position: relative;
+    background: url('image/logo.PNG') no-repeat bottom center;
+    background-size: 100% 200px;  /* Adapter l'image à la taille */
+    padding-bottom: 50px; /* Ajouter de l'espace en bas pour l'image de fond */
+}
+
+h1 {
+    text-align: center;
+    margin: 20;
+    padding: 50px 0;
+	
+}
+
+.image-container {
+    display: none; /* Cache le div qui contient le logo si vous l'utilisez comme fond */
+}
+
+/* Style de la page */
+body {
+    background-color: #f0f2f5; /* Couleur de fond neutre */
+    padding: 20px; /* Espacement autour du contenu */
+}
+
+/* Conteneur principal centré */
+.container {
+    max-width: 1200px; /* Largeur maximale pour les grands écrans */
+    margin: 0 auto; /* Centrage horizontal */
+}
+
+/* Styles des titres */
+h1, h2 {
+    color: #1a73e8; /* Couleur */
+    margin-bottom: 20px; /* Espace sous les titres */
+    text-align: center; /* Centrage du texte */
+}
+
+/* Disposition en grille pour le contenu principal */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+    gap: 20px; /* Espace entre les colonnes */
+}
+
+/* Styles communs pour les sections */
+.rules-section, .simulation-section {
+    background: white; /* Fond blanc pour contraste */
+    padding: 20px; /* Espace interne */
+    border-radius: 10px; /*  arrondis les Coins */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* effet de l'ombre légère */
+}
+
+/* Grille pour les champs Opérateur */
+.operator-info {
+    display: grid;
+    gap: 15px; /* Espace entre les éléments */
+    margin-bottom: 10px; /* Marge basse */
+}
+
+/* Groupes de champs formulaire */
+.input-group {
+    display: flex;
+    flex-direction: column; /* Empilement vertical */
+    gap: 5px; /* 5px espace entre label et input */
+    margin-bottom: 10px; /* Espace entre les groupes */
+}
+
+/* Styles communs des éléments de formulaire */
+input, select, button {
+    padding: 8px; /* Confort de saisie */
+    border: 1px solid #dadce0; /* Bordure subtile */
+    border-radius: 4px; /* Légers coins arrondis */
+}
+
+/* Personnalisation des boutons */
+button {
+    border: none; /* Suppression bordure par défaut */
+    cursor: pointer; /* Curseur de clic */
+    font-weight: bold; /* Texte en gras */
+    color: white; /* Texte blanc */
+}
+
+/* Couleurs thématiques des boutons */
+.btn-primary { background: #1a73e8; } /* Bleu primaire */
+.btn-success { background: #34a853; } /* Vert de confirmation */
+.btn-danger { background: #ea4335; } /* Rouge d'alerte */
+
+/* Liste des règles avec défilement */
+.rules-list {
+    max-height: 200px; /* Hauteur fixe */
+    overflow-y: auto; /* Défilement si nécessaire */
+    margin-top: 15px; /* Espace au-dessus */
+}
+
+/* Style des éléments de règle */
+.rule-item {
+    display: flex;
+    justify-content: space-between; /* Répartition espace */
+    padding: 10px; /* Espace interne */
+    margin: 5px 0; /* Marge verticale */
+    background: #f8f9fa; /* Fond légèrement gris */
+    border-left: 4px solid; /* Bordure latérale */
+}
+
+/* Couleurs des bordures par type de règle */
+.rule-item.allow { border-color: #34a853; } /* Vert pour autorisation */
+.rule-item.block { border-color: #ea4335; } /* Rouge pour blocage */
+
+/* Conteneur d'animation */
+.simulation-display {
+    height: 300px; /* Hauteur fixe */
+    position: relative; /* Référence pour positionnement absolu */
+    overflow: hidden; /* Cache le débordement */
+    margin-top: 15px; /* Espace au-dessus */
+}
+
+/* Zone d'animation des paquets */
+#packetAnimation {
+    position: absolute;
+    width: 100%; /* Pleine largeur */
+    height: 100%; /* Pleine hauteur */
+}
+
+/* Style des paquets réseau animés */
+.packet {
+    position: absolute;
+    font-size: 35px;  
+    transition: all 3s linear; /* Animation fluide 3s*/
+}
+
+/* Journal des événements de simulation */
+#simulationLogs {
+    position: absolute;
+    bottom: 0;  
+    width: 100%;  
+    background: #000000; /* Fond semi-transparent */
+    color: #00ff00; /* Texte vert style terminal */
+    padding: 10px;  
+}
+
+/* Pied de page */
+footer {
+    text-align: center;  
+    padding: 20px;  
+    margin-top: 20px;  
+    color: #666;  
+}
+
+/* Responsive design pour mobiles */
+@media (max-width: 768px) {
+    .main-content { 
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+    .operator-info { 
+        grid-template-columns: 1fr; /* Empilement vertical */
+    }
+}

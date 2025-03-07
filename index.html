@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html lang="fr"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Simulateur de Pare-feu</title> 
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body> <!-- Corps du document -->
+    <main class="container"> 
+        <header> 
+            <h1>Simulateur de Pare-feu</h1> <!-- Titre principal -->
+			<div class="image-container">
+    <img src="image/logo.PNG" width="180" height="50"  alt="Logo de Amine Cab Inc."> 
+        </header>
+        <section class="main-content"> 
+            <!-- Section des règles -->
+            <article class="rules-section"> 
+                <h2>Configuration des Règles</h2> <!-- Sous-titre -->
+                <form class="rule-form"> <!-- Formulaire de configuration -->
+                    <h3>Opérateur</h3> 
+                        <p class="input-group"> <!--champ pour saisie Prénom -->
+                            <label for="operatorFirstName">Prénom :</label> <!-- Étiquette -->
+                            <input type="text" id="operatorFirstName" placeholder="Ex: Iaac"> <!-- Champ texte -->
+                        </p>
+                        <p class="input-group"> <!-- Groupe de saisie Nom -->
+                            <label for="operatorLastName">Nom :</label>
+                            <input type="text" id="operatorLastName" placeholder="Ex:BENGADI">
+                        </p>
+                    <!-- Champ Adresse IP -->
+                    <p class="input-group">
+                        <label for="ipAddress">Adresse IP :</label>
+                        <input type="text" id="ipAddress" placeholder="Ex: 192.168.1.1"> <!-- Validation via JS -->
+                    </p>
+                    <!-- Champ Port -->
+                    <p class="input-group">
+                        <label for="port">Port :</label>
+                        <input type="number" id="port" placeholder="Ex: 80" min="1" max="65535"> <!--condition : Limites 1-65535 -->
+                    </p>
+
+                    <!-- Liste déroulante Action -->
+                    <p class="input-group">
+                        <label for="action">Action :</label>
+                        <select id="action"> <!-- Options de filtrage -->
+                            <option value="allow">Autoriser</option>
+                            <option value="block">Bloquer</option>
+                        </select>
+                    </p>
+
+                    <!-- Bouton d'ajout -->
+                    <button type="button" onclick="addRule()" class="btn-primary">Ajouter</button> <!-- Appel JS -->
+                </form>
+
+                <!-- Liste des règles actives -->
+                <section class="rules-list">
+                    <h3>Règles Actives</h3>
+                    <output id="rulesList"></output> <!-- Contenu dynamique généré par JS -->
+                </section>
+            </article>
+
+            <!-- Section de simulation -->
+            <article class="simulation-section"> 
+                <h2>Simulation</h2>
+                <button id="startSimulation" onclick="toggleSimulation()" class="btn-success">Démarrer</button> <!-- Gestion simulation -->
+                <figure class="simulation-display"> <!-- Conteneur d'animation -->
+                    <section id="packetAnimation"></section> <!-- Animation des paquets -->
+                    <figcaption id="simulationLogs"></figcaption> <!-- Journal des événements -->
+                </figure>
+            </article>
+        </section>
+    </main>
+
+    <footer> <!-- Pied de page -->
+        <p>© 2025 Simulateur de Pare-feu. Etudiants CCNB-Tous droits réservés.</p> <!-- Mentions légales -->
+    </footer>
+
+    <script src="script.js"></script> <!-- Liaison avec le script JavaScript -->
+</body>
+</html>
