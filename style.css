@@ -1,22 +1,31 @@
+/* le fichier css pour le simulateur de pare feu */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
     font-family: Arial, sans-serif; 
 }
+
+
 header {
     position: relative;
-    background: url('image/logo.PNG') no-repeat bottom center;
-    background-size: 100% 200px;  /* Adapter l'image à la taille */
-    padding-bottom: 50px; /* Ajouter de l'espace en bas pour l'image de fond */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-h1 {
-    text-align: center;
-    margin: 20;
-    padding: 50px 0;
-	
+.logo-container {
+    position: absolute;
+    top: -10px;
+    left: -20px;
 }
+
+header h1 {
+    margin-left: 200px; /* Décalage du titre pour éviter qu'il chevauche le logo */
+}
+
+
 
 .image-container {
     display: none; /* Cache le div qui contient le logo si vous l'utilisez comme fond */
