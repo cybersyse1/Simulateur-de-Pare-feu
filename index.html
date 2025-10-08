@@ -4,15 +4,16 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Simulateur de Pare-feu</title> 
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body> <!-- Corps du document -->
     <main class="container"> 
-        <header> 
-            <h1>Simulateur de Pare-feu</h1> <!-- Titre principal -->
-			<div class="image-container">
-    <img src="image/logo.PNG" width="180" height="50"  alt="Logo de Amine Cab Inc."> 
-        </header>
+       <header> 
+    <div class="logo-container">
+        <img src="image/logo.png" width="200" height="70" alt="Logo">
+    </div>
+    <h1>Simulateur de Pare-feu</h1>
+		</header>
         <section class="main-content"> 
             <!-- Section des règles -->
             <article class="rules-section"> 
@@ -21,11 +22,11 @@
                     <h3>Opérateur</h3> 
                         <p class="input-group"> <!--champ pour saisie Prénom -->
                             <label for="operatorFirstName">Prénom :</label> <!-- Étiquette -->
-                            <input type="text" id="operatorFirstName" placeholder="Ex: Iaac"> <!-- Champ texte -->
+                            <input type="text" id="operatorFirstName" placeholder="Ex: IAAC"> <!-- Champ texte -->
                         </p>
                         <p class="input-group"> <!-- Groupe de saisie Nom -->
                             <label for="operatorLastName">Nom :</label>
-                            <input type="text" id="operatorLastName" placeholder="Ex:BENGADI">
+                            <input type="text" id="operatorLastName" placeholder="Ex:CCNB">
                         </p>
                     <!-- Champ Adresse IP -->
                     <p class="input-group">
@@ -42,7 +43,7 @@
                     <p class="input-group">
                         <label for="action">Action :</label>
                         <select id="action"> <!-- Options de filtrage -->
-                            <option value="allow">Autoriser</option>
+                            <option value="Autorisé">Autoriser</option>
                             <option value="block">Bloquer</option>
                         </select>
                     </p>
@@ -64,16 +65,16 @@
                 <button id="startSimulation" onclick="toggleSimulation()" class="btn-success">Démarrer</button> <!-- Gestion simulation -->
                 <figure class="simulation-display"> <!-- Conteneur d'animation -->
                     <section id="packetAnimation"></section> <!-- Animation des paquets -->
-                    <figcaption id="simulationLogs"></figcaption> <!-- Journal des événements -->
+                    <figcaption id="simulationLogs"></figcaption> <!-- Journal des événements des paquets -->
                 </figure>
             </article>
         </section>
     </main>
 
     <footer> <!-- Pied de page -->
-        <p>© 2025 Simulateur de Pare-feu. Etudiants CCNB-Tous droits réservés.</p> <!-- Mentions légales -->
+        <p> © 2025 Simulateur de Pare-feu. Etudiants CCNB-Tous droits réservés.</p> <!-- Mentions légales -->
     </footer>
 
-    <script src="script.js"></script> <!-- Liaison avec le script JavaScript -->
+    <script src="js/script.js"></script> <!-- Liaison avec le script JavaScript -->
 </body>
 </html>
